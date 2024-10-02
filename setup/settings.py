@@ -89,7 +89,8 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'setup.wsgi.application'
+WSGI_APPLICATION = 'crm_projeto.wsgi.application'
+
 
 
 # Database
