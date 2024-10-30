@@ -6,22 +6,26 @@
     <div class="row justify-content-center">
         <div class="col-md-6 col-lg-5">
             <!-- Formulário com validação de erros -->
-            <div class="card shadow-lg p-4">
+            <div class="card shadow-sm border-0 p-4 rounded-lg">
+                <h3 class="text-center mb-4 text-primary">Formulário de Cadastro</h3>
+                
                 {% if form.errors %}
                     <div class="mb-3">
                         {% for field in form %}
                             {% for error in field.errors %}
-                                <div class="alert alert-danger">
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                     <strong>{{ error|escape }}</strong>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                 </div>
                             {% endfor %}
                         {% endfor %}
                     </div>
                 {% endif %}
+
                 <form method="POST" class="form">
                     {% csrf_token %}
                     {{ form|crispy }}
-                    <button type="submit" class="btn btn-primary w-100 mt-3">Salvar</button>
+                    <button type="submit" class="btn btn-primary w-100 mt-4">Salvar</button>
                 </form>
             </div>
         </div>

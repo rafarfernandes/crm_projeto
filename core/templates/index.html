@@ -1,36 +1,46 @@
 {% extends "model-page.html" %}
+{% load static %}
 
 {% block content %}
-<div class="container py-5">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card shadow-lg border-0">
-                <div class="card-body p-5">
-                    <h2 class="card-title text-center text-warning mb-4">Bem-vindo ao CRM</h2>
-                    <h5 class="text-muted text-center mb-4">Sistema de Gestão de Clientes</h5>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM - Bem-vindo</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="content-wrapper">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Bem-vindo ao CRM</h2>
+                    <h5 class="subtitle">Sistema de Gestão de Clientes</h5>
 
-                    <p class="card-text">
+                    <p class="description">
                         Este CRM permite você gerenciar seus clientes de maneira eficiente. Aqui estão as principais funcionalidades que você pode acessar:
                     </p>
-                    <ul class="list-group list-group-flush mb-4">
-                        <li class="list-group-item">📝 <strong>Adicionar Clientes</strong>: Registre novos clientes facilmente com seus dados principais.</li>
-                        <li class="list-group-item">✏️ <strong>Editar Clientes</strong>: Atualize informações importantes sempre que necessário.</li>
-                        <li class="list-group-item">❌ <strong>Excluir Clientes</strong>: Remova clientes que não são mais relevantes.</li>
-                        <li class="list-group-item">🔍 <strong>Listar Clientes</strong>: Veja e gerencie todos os seus clientes em um só lugar.</li>
+                    <ul class="features-list">
+                        <li><span>📝</span> <strong>Adicionar Clientes</strong>: Registre novos clientes facilmente com seus dados principais.</li>
+                        <li><span>✏️</span> <strong>Editar Clientes</strong>: Atualize informações importantes sempre que necessário.</li>
+                        <li><span>❌</span> <strong>Excluir Clientes</strong>: Remova clientes que não são mais relevantes.</li>
+                        <li><span>🔍</span> <strong>Listar Clientes</strong>: Veja e gerencie todos os seus clientes em um só lugar.</li>
                     </ul>
 
-                    <p class="card-text">
+                    <p class="instructions">
                         <strong>Como usar:</strong>
-                        Navegue pelos menu na parte superior para acessar. Clique em "Clientes" para ver a lista completa de clientes e usar as opções de adicionar, editar ou excluir. É fácil e prático!
+                        Navegue pelo menu na parte superior para acessar. Clique em "Clientes" para ver a lista completa de clientes e usar as opções de adicionar, editar ou excluir. É fácil e prático!
                     </p>
 
-                    <div class="d-flex justify-content-center mt-4">
-                        <a href="{% url 'customer:customer-list' %}" class="btn btn-primary mx-2">Gerenciar Clientes</a>
-                        <a href="{% url "customer:customer-create" %}" class="btn btn-success mx-2">Adicionar Novo Cliente</a>
+                    <div class="button-group">
+                        <a href="{% url 'customer:customer-list' %}" class="btn-primary">Gerenciar Clientes</a>
+                        <a href="{% url 'customer:customer-create' %}" class="btn-secondary">Adicionar Novo Cliente</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</body>
+</html>
 {% endblock %}
